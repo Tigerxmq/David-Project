@@ -3,7 +3,6 @@
 
 int main()
 {
-    ///
     int w=800,h=450;
     int choice;
 
