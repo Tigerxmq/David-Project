@@ -1,7 +1,7 @@
 #include <iostream>
-#include <string>
 #include <math.h>
 #include <random>
+#include <ctime>
 
 #include "raylib.h"
 
