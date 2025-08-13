@@ -26,10 +26,10 @@ int main()
     Texture2D SnakeHeadRight = LoadTexture("images/right.png");
     typedef enum
     {
-        up,
-        down,
-        left,
-        right
+        up=1,
+        down=2,
+        left=3,
+        right=4
     }Direction;
     Direction SnakeHeadDir = down;
      
@@ -49,10 +49,25 @@ int main()
         if(IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D))currentDirection = 4;
 
         //-------------------------------------------------------------------
-        if(currentDirection == 1) SnakeHeadY +=speed;
-        if(currentDirection == 2) SnakeHeadY -=speed;
-        if(currentDirection == 3) SnakeHeadX -=speed;
-        if(currentDirection == 4) SnakeHeadX +=speed;
+        if(currentDirection == 1){
+
+         SnakeHeadY +=speed;
+            SnakeHeadDir = down; 
+        }
+        if(currentDirection == 2){
+
+        SnakeHeadY -=speed;
+        SnakeHeadDir = up;
+    }
+        if(currentDirection == 3){
+
+        SnakeHeadX -=speed;
+        SnakeHeadDir = left;
+    }
+        if(currentDirection == 4){
+            SnakeHeadX +=speed;
+            SnakeHeadDir = right;
+        }
         //-------------------------------------------------------------------
         //Boundaries for the snake movment
         if((SnakeHeadX + 64) >=screenWidth)// right
@@ -98,7 +113,6 @@ int main()
         }
         
         //Draw  SnakeHead
-
           
         //DrawText("Welcome to my snake game. ", 100, 220, 30, WHITE);
 
